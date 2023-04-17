@@ -31,7 +31,7 @@ def main():
     model_manager = FaceLocalizerAndRecognizer()
     model = model_manager.build_model()
 
-    history = model.fit(train, epochs=1, validation_data=val, callbacks=model_manager.callbacks)
+    history = model.fit(train, epochs=150, validation_data=val, callbacks=model_manager.callbacks)
     model_manager.save_model(filename)
 
 

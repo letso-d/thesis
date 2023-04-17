@@ -5,10 +5,12 @@ from keras.models import load_model
 from capture import ImageGetter
 from process import ImageProcessor
 
+camera_id = 0
+
 
 async def main():
     model = load_model('object_tracking_network.h5')
-    cam = cv2.VideoCapture(0, cv2.CAP_DSHOW)
+    cam = cv2.VideoCapture(camera_id, cv2.CAP_DSHOW)
     cam.set(3, 640)
     cam.set(4, 480)
     image_queue = asyncio.Queue()
